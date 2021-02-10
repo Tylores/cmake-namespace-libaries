@@ -1,0 +1,1 @@
+# cmake-namespace-libaries
