@@ -1,3 +1,0 @@
-F:/Dev/cmake-namespace-libaries/test/build/CMakeFiles/tests.dir
-F:/Dev/cmake-namespace-libaries/test/build/CMakeFiles/ALL_BUILD.dir
-F:/Dev/cmake-namespace-libaries/test/build/CMakeFiles/ZERO_CHECK.dir
