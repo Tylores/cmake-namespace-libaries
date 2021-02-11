@@ -23,6 +23,13 @@ install(
     INCLUDES DESTINATION include
 )
 
+# install header file
+install(
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    DESTINATION include
+    FILES_MATCHING PATTERN "*.h*"
+)
+
 # generate and install export file
 install(
     EXPORT EchoBaseTargets
