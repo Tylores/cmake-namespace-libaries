@@ -2,6 +2,9 @@
 #define __ECHO_H__
 #include <string>
 
-void echo (const std::string& message);
+namespace base
+{
+    void echo (const std::string& message);
+} // namespace base
 
 #endif // __ECHO_H__

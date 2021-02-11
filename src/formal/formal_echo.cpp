@@ -1,7 +1,10 @@
 #include <iostream>
 #include "formal_echo.hpp"
 
-void echo(const std::string& message, const std::string& name) 
+namespace formal
 {
-    std::cout << name << " : " << message << std::endl;
+    void echo(const std::string& message, const std::string& name) 
+    {
+        std::cout << name << " : " << message << std::endl;
+    }
 }
