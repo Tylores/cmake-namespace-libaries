@@ -30,5 +30,5 @@ add_executable (tests
     main.cpp
 )
 
-target_link_libraries(tests echo::base echo::formal)
-target_include_directories(tests PUBLIC ${echo_INCLUDE_DIRS})
+target_link_libraries(tests Echo::Base Echo::Formal)
+target_include_directories(tests PUBLIC ${Echo_INCLUDE_DIRS})

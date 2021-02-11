@@ -1,9 +1,11 @@
 @PACKAGE_INIT@
 
-foreach(_comp ${Echo_FIND_COMPONENTS})
+set(_supported_components Base Formal)
+
+foreach(_comp ${echo_FIND_COMPONENTS})
   if (NOT _comp IN_LIST _supported_components)
-    set(Echo_FOUND False)
-    set(Echo_NOT_FOUND_MESSAGE "Unsupported component: ${_comp}")
+    set(echo_FOUND False)
+    set(echo_NOT_FOUND_MESSAGE "Unsupported component: ${_comp}")
   endif()
-  include("${CMAKE_CURRENT_LIST_DIR}/Echo${_comp}Targets.cmake")
+  include("${CMAKE_CURRENT_LIST_DIR}/echo${_comp}Targets.cmake")
 endforeach()
