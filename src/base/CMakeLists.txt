@@ -7,7 +7,7 @@ add_library( ${project_name}::Base ALIAS Base )
 
 # add include directories
 target_include_directories(
-    EchoBase
+    Base
     PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
     "$<INSTALL_INTERFACE:include>"
@@ -15,8 +15,8 @@ target_include_directories(
 
 # install the target and create export-set
 install(
-    TARGETS EchoBase
-    EXPORT EchoBaseTargets
+    TARGETS Base
+    EXPORT BaseTargets
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
@@ -32,8 +32,8 @@ install(
 
 # generate and install export file
 install(
-    EXPORT EchoBaseTargets
-    FILE EchoBaseTargets.cmake
+    EXPORT BaseTargets
+    FILE BaseTargets.cmake
     NAMESPACE Echo::
     DESTINATION lib/cmake
 )

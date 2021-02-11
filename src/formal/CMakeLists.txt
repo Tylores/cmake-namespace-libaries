@@ -7,15 +7,15 @@ add_library( ${project_name}::Formal ALIAS Formal )
 
 # add include directories
 target_include_directories(
-    EchoFormal
+    Formal
     PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
     "$<INSTALL_INTERFACE:include>"
 )
 
 # install the target and create export-set
-install(TARGETS EchoFormal
-    EXPORT EchoFormalTargets
+install(TARGETS Formal
+    EXPORT FormalTargets
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
@@ -31,8 +31,8 @@ install(
 
 # generate and install export file
 install(
-    EXPORT EchoFormalTargets
-    FILE EchoFormalTargets.cmake
+    EXPORT FormalTargets
+    FILE FormalTargets.cmake
     NAMESPACE Echo::
     DESTINATION lib/cmake
 )
