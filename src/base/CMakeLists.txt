@@ -5,13 +5,6 @@ add_library(Base STATIC
 # Create ALIAS targets.
 add_library( ${project_name}::Base ALIAS Base )
 
-# add include directories
-target_include_directories(
-    Base
-    PUBLIC
-    "$<INSTALL_INTERFACE:include/echo>"
-)
-
 # install the target and create export-set
 install(
     TARGETS Base
@@ -25,7 +18,7 @@ install(
 
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DESTINATION "include/echo/base"
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/echo
     FILES_MATCHING PATTERN "*.h*"
 )
 
