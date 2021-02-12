@@ -19,19 +19,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include(FetchContent)
 
 FetchContent_Declare(
-    Echo COMPONENT Base Formal
+    echo COMPONENT base formal
     GIT_REPOSITORY https://github.com/Tylores/cmake-namespace-libaries.git
     GIT_TAG        main
 )
 
-FetchContent_MakeAvailable(Echo)
+FetchContent_MakeAvailable(echo)
 
 add_executable (tests
     main.cpp
 )
 
-target_link_libraries(tests Echo::Base Echo::Formal)
+target_link_libraries(tests echo::base echo::formal)
 target_include_directories(
     tests PUBLIC 
-    ${Echo_INCLUDE_DIRS}
+    ${echo_INCLUDE_DIRS}
 )
