@@ -3,9 +3,7 @@ add_library(base STATIC
 )
 
 # Create ALIAS targets.
-add_library( ${project_name}::base ALIAS base )
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/${project_name})
+add_library( echo::base ALIAS base )
 
 target_include_directories(
     base PUBLIC
@@ -18,7 +16,7 @@ install(
     TARGETS base
     EXPORT baseTargets
     FILE baseTargets.cmake
-    NAMESPACE ${project_name}::
+    NAMESPACE echo::
     DESTINATION lib/cmake
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib

@@ -3,9 +3,7 @@ add_library(formal STATIC
 )
 
 # Create ALIAS targets.
-add_library( ${project_name}::formal ALIAS formal )
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/${project_name})
+add_library( echo::formal ALIAS formal )
 
 target_include_directories(
     formal PUBLIC
@@ -18,7 +16,7 @@ install(
     TARGETS formal
     EXPORT formalTargets
     FILE formalTargets.cmake
-    NAMESPACE ${project_name}::
+    NAMESPACE echo::
     DESTINATION lib/cmake
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
