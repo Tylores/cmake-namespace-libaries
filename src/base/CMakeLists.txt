@@ -10,7 +10,7 @@ target_include_directories(
     Base
     PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-    "$<INSTALL_INTERFACE:include/echo/base>"
+    "$<INSTALL_INTERFACE:include>"
 )
 
 # install the target and create export-set

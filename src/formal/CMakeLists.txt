@@ -10,7 +10,7 @@ target_include_directories(
     Formal
     PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-    "$<INSTALL_INTERFACE:include/echo/formal>"
+    "$<INSTALL_INTERFACE:include>"
 )
 
 # install the target and create export-set
@@ -25,7 +25,7 @@ install(TARGETS Formal
 # install header file
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DESTINATION echo/formal
+    DESTINATION "include/echo/formal"
     FILES_MATCHING PATTERN "*.h*"
 )
 
