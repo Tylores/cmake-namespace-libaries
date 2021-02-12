@@ -1,6 +1,6 @@
 #include <iostream>
-#include "echo.hpp"
-#include "formal_echo.hpp"
+#include "echo/echo.hpp"
+#include "echo/formal_echo.hpp"
 
 
 int main(int argc, char const *argv[])

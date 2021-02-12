@@ -12,13 +12,13 @@ install(
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include/base
+    INCLUDES DESTINATION include/${project_name}
 )
 
 
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/base
-    DESTINATION include/echo/base
+    DESTINATION include/${project_name}
     FILES_MATCHING PATTERN "*.h*"
 )
 
