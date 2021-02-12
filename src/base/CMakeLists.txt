@@ -15,8 +15,8 @@ target_include_directories(
 
 # install the target and create export-set
 install(
-    TARGETS formal
-    EXPORT formalTargets
+    TARGETS base
+    EXPORT baseTargets
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
