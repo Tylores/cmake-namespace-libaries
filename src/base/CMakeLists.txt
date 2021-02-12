@@ -6,9 +6,7 @@ add_library(Base STATIC
 add_library( ${project_name}::Base ALIAS Base )
 
 target_include_directories(
-    Base PUBLIC
-    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
-    "$<INSTALL_INTERFACE:include>"
+    Base PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/lib/include/${project_name}
 )
 
 # install the target and create export-set
@@ -21,5 +19,5 @@ install(
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include
+    INCLUDES DESTINATION include/${project_name}
 )
