@@ -6,7 +6,8 @@ add_library(Formal STATIC
 add_library( ${project_name}::Formal ALIAS Formal )
 
 # install the target and create export-set
-install(TARGETS Formal
+install(
+    TARGETS Formal
     EXPORT FormalTargets
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
