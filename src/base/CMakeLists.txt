@@ -23,10 +23,10 @@ install(
     INCLUDES DESTINATION include
 )
 
-# install header file
+
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DESTINATION include
+    DESTINATION include/echo/base
     FILES_MATCHING PATTERN "*.h*"
 )
 

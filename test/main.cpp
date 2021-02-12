@@ -1,7 +1,10 @@
 #include <iostream>
+#include "echo.hpp"
+#include "formal_echo.hpp"
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Hello World!" << std::endl;
+    base::echo("Hello World!");
+    formal::echo("Hello there!", "John");
     return 0;
 }
