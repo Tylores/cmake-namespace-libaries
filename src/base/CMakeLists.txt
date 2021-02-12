@@ -5,6 +5,14 @@ add_library(Base STATIC
 # Create ALIAS targets.
 add_library( ${project_name}::Base ALIAS Base )
 
+# add include directories
+target_include_directories(
+    Base
+    PUBLIC
+    "$<BUILD_INTERFACE:echo>"
+    "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>"
+)
+
 # install the target and create export-set
 install(
     TARGETS Base
