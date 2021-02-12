@@ -1,6 +1,6 @@
 @PACKAGE_INIT@
 
-set(_supported_components Base Formal)
+set(_supported_components base formal)
 
 foreach(_comp ${echo_FIND_COMPONENTS})
   if (NOT _comp IN_LIST _supported_components)

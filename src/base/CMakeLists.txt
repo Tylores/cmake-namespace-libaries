@@ -1,9 +1,9 @@
-add_library(Base STATIC
+add_library(base STATIC
     echo.cpp
 )
 
 # Create ALIAS targets.
-add_library( ${project_name}::Base ALIAS Base )
+add_library( ${project_name}::base ALIAS base )
 
 # install the target and create export-set
 install(
@@ -12,13 +12,13 @@ install(
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include/${project_name}
+    INCLUDES DESTINATION ${project_name}
 )
 
 
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/echo
-    DESTINATION include/${project_name}
+    DESTINATION ${project_name}
     FILES_MATCHING PATTERN "*.h*"
 )
 
@@ -26,6 +26,6 @@ install(
 install(
     EXPORT BaseTargets
     FILE BaseTargets.cmake
-    NAMESPACE Echo::
+    NAMESPACE ${project_name}::
     DESTINATION lib/cmake
 )

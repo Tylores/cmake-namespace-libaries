@@ -1,9 +1,9 @@
-add_library(Formal STATIC
+add_library(formal STATIC
     formal_echo.cpp
 )
 
 # Create ALIAS targets.
-add_library( ${project_name}::Formal ALIAS Formal )
+add_library( ${project_name}::formal ALIAS formal )
 
 # install the target and create export-set
 install(
@@ -12,13 +12,13 @@ install(
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include/${project_name}
+    INCLUDES DESTINATION ${project_name}
 )
 
 # install header file
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/echo
-    DESTINATION include/${project_name}
+    DESTINATION ${project_name}
     FILES_MATCHING PATTERN "*.h*"
 )
 
@@ -26,6 +26,6 @@ install(
 install(
     EXPORT FormalTargets
     FILE FormalTargets.cmake
-    NAMESPACE Echo::
+    NAMESPACE ${project_name}::
     DESTINATION lib/cmake
 )

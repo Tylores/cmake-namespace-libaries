@@ -2,6 +2,8 @@
 # and oldest tested versions of CMake. 
 cmake_minimum_required(VERSION 3.14...3.19)
 
+
+
 # set version
 set(version 1.0.0)
 set(project_name echo)
