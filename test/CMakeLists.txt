@@ -2,7 +2,6 @@
 # and oldest tested versions of CMake. 
 cmake_minimum_required(VERSION 3.14...3.19)
 
-
 # set version
 set(version 1.0.0)
 
@@ -20,19 +19,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include(FetchContent)
 
 FetchContent_Declare(
-    echo COMPONENT base formal
+    Echo COMPONENT Base Formal
     GIT_REPOSITORY https://github.com/Tylores/cmake-namespace-libaries.git
     GIT_TAG        main
 )
 
-FetchContent_MakeAvailable(echo)
+FetchContent_MakeAvailable(Echo)
 
 add_executable (tests
     main.cpp
 )
 
-target_link_libraries(tests echo::base echo::formal)
+target_link_libraries(tests Echo::Base Echo::Formal)
 target_include_directories(
     tests PUBLIC 
-    ${echo_INCLUDE_DIRS}
+    ${Echo_INCLUDE_DIRS}
 )

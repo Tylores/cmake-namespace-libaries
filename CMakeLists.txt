@@ -4,8 +4,7 @@ cmake_minimum_required(VERSION 3.14...3.19)
 
 # set version
 set(version 1.0.0)
-set(project_name echo)
-
+set(project_name Echo)
 
 # This is your project statement. You should always list languages;
 project(
