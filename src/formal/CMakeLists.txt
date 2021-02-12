@@ -16,7 +16,7 @@ install(TARGETS Formal
 
 # install header file
 install(
-    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/${project_name}
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/echo
     DESTINATION include/${project_name}
     FILES_MATCHING PATTERN "*.h*"
 )
