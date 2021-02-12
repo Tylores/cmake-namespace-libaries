@@ -5,13 +5,7 @@ add_library(Formal STATIC
 # Create ALIAS targets.
 add_library( ${project_name}::Formal ALIAS Formal )
 
-# add include directories
-target_include_directories(
-    Formal
-    PUBLIC
-    "$<BUILD_INTERFACE:formal>"
-    "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>"
-)
+include_directories( echo/formal )
 
 # install the target and create export-set
 install(TARGETS Formal
@@ -19,13 +13,13 @@ install(TARGETS Formal
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/formal
+    INCLUDES DESTINATION include
 )
 
 # install header file
 install(
     DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/formal
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING PATTERN "*.h*"
 )
 
