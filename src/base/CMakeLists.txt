@@ -20,7 +20,7 @@ install(
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include
+    INCLUDES DESTINATION include/echo/base
 )
 
 

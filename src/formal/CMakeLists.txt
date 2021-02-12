@@ -19,7 +19,7 @@ install(TARGETS Formal
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION include
+    INCLUDES DESTINATION include/echo/formal
 )
 
 # install header file
