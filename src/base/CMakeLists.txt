@@ -17,8 +17,11 @@ target_include_directories(
 install(
     TARGETS base
     EXPORT baseTargets
+    FILE baseTargets.cmake
+    NAMESPACE ${project_name}::
+    DESTINATION lib/cmake
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDE_DIR}
+    INCLUDES DESTINATION include
 )
