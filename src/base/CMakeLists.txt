@@ -13,7 +13,6 @@ target_include_directories(
 install(
     TARGETS Base
     EXPORT BaseTargets
-    FILE BaseTargets.cmake
     NAMESPACE ${project_name}::
     DESTINATION lib/cmake
     LIBRARY DESTINATION lib

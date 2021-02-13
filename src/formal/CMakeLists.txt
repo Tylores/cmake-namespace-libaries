@@ -13,7 +13,6 @@ target_include_directories(
 install(
     TARGETS Formal
     EXPORT FormalTargets
-    FILE FormalTargets.cmake
     NAMESPACE ${project_name}::
     DESTINATION lib/cmake
     LIBRARY DESTINATION lib

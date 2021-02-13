@@ -3,14 +3,14 @@
 cmake_minimum_required(VERSION 3.14...3.19)
 
 # set version
-set(version 1.0.0)
-set(project_name Echo)
+set(PROJECT_VERSION 1.0.0)
+set(PROJECT_NAME Echo)
 
 
 # This is your project statement. You should always list languages;
 project(
-  ${project_name}
-  VERSION ${version})
+  ${PROJECT_NAME}
+  VERSION ${PROJECT_VERSION})
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -22,24 +22,21 @@ add_subdirectory(src/formal)
 # include CMakePackageConfigHelpers macro
 include(CMakePackageConfigHelpers)
 
-# generate the version file for the config file
-write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/${project_name}Config.cmake"
-    VERSION "${version}"
-    COMPATIBILITY AnyNewerVersion
-)
-
-# create config file
 configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in 
-    ${CMAKE_CURRENT_BINARY_DIR}/${project_name}Config.cmake
-    INSTALL_DESTINATION lib/cmake
-    NO_CHECK_REQUIRED_COMPONENTS_MACRO
+    ${PROJECT_NAME}Config.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
+    INSTALL_DESTINATION ${LIB_INSTALL_DIR}/${PROJECT_NAME}/cmake
+    PATH_VARS INCLUDE_INSTALL_DIR SYSCONFIG_INSTALL_DIR
 )
 
-# install config files
+write_basic_package_version_file(
+    ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion 
+)
+
 install(
-    FILES "${CMAKE_CURRENT_BINARY_DIR}/${project_name}.cmake"
-    NAMESPACE ${project_name}::
-    DESTINATION lib/cmake
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
+    DESTINATION ${LIB_INSTALL_DIR}/${PROJECT_NAME}/cmake 
 )
