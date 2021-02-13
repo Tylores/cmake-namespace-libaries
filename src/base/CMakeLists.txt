@@ -4,7 +4,7 @@ add_library(${COMPONENT_NAME} STATIC
 )
 
 # Create ALIAS targets.
-add_library( ${PROJECT_NAME}::${COMPONENT_NAME} ALIAS ${PROJECT_NAME} )
+add_library( ${PROJECT_NAME}::${COMPONENT_NAME} ALIAS ${COMPONENT_NAME} )
 
 target_include_directories(
     ${COMPONENT_NAME} PUBLIC
