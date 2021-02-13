@@ -6,7 +6,6 @@ cmake_minimum_required(VERSION 3.14...3.19)
 set(PROJECT_VERSION 1.0.0)
 set(PROJECT_NAME Echo)
 
-
 # This is your project statement. You should always list languages;
 project(
   ${PROJECT_NAME}
@@ -38,5 +37,5 @@ write_basic_package_version_file(
 install(
     FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
-    DESTINATION ${LIB_INSTALL_DIR}/${PROJECT_NAME}/cmake 
+    DESTINATION ${LIB_INSTALL_DIR}/cmake 
 )
